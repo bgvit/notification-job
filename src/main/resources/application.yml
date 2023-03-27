@@ -1,0 +1,20 @@
+s
+spring:
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+    url: jdbc:postgresql://localhost:5432/postgres?schema=notification_service
+    username: postgres
+    password: postgres
+
+  kafka:
+    bootstrap-servers: http://redpanda-0:9092
+
+notification-watch:
+  kafka:
+    produce:
+      topic: notification-consumer
+
+
+

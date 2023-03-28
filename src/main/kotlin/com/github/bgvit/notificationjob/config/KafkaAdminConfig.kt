@@ -1,4 +1,4 @@
-package com.github.bgvit.notificationwatch.config
+package com.github.bgvit.notificationjob.config
 
 import org.apache.kafka.clients.admin.AdminClientConfig
 import org.springframework.beans.factory.annotation.Value
@@ -19,4 +19,14 @@ class KafkaAdminConfig(
         configs[AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG] = bootstrapAddress
         return KafkaAdmin(configs)
     }
+
+    @Value("\${spring.cloud.stream.kafka.binder.producer-properties.schema.registry.url}")
+    private val endPoint: String? = null
+
+//    @Bean
+//    fun schemaRegistryClient(): SchemaRegistryClient {
+//        val client = ()
+//        client.setEndpoint(endPoint)
+//        return client
+//    }
 }

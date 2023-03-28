@@ -1,1 +1,1 @@
-rootProject.name = "notification-watch"
+rootProject.name = "notificationjob"

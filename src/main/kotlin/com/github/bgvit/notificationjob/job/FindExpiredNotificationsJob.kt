@@ -1,11 +1,11 @@
-package com.github.bgvit.notificationwatch.job
+package com.github.bgvit.notificationjob.job
 
-import com.github.bgvit.notificationwatch.service.NotificationService
+import com.github.bgvit.notificationjob.service.NotificationService
 import org.springframework.context.annotation.Configuration
 import org.springframework.scheduling.annotation.Scheduled
 
 @Configuration
-class FindExpiredNotificationsTask(private val notificationService: NotificationService) {
+class FindExpiredNotificationsJob(private val notificationService: NotificationService) {
 
     @Scheduled(cron = "3 * * * * *")
     fun execute() {

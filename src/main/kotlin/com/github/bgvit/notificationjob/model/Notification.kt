@@ -1,17 +1,13 @@
-package com.github.bgvit.notificationwatch.model
+package com.github.bgvit.notificationjob.model
 
-import com.github.bgvit.notificationwatch.model.enums.NotificationType
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
+import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
 import java.time.ZonedDateTime
 
-@Table("notification")
-@Entity
+@Table
 data class Notification(
-    @Id
-    val id: String,
-    val notificationType: NotificationType,
+    @Id val id: String,
+    val notificationType: String,
     val notificationMessage: String,
     val deliveryDate: ZonedDateTime = ZonedDateTime.now(),
     val accountId: String,
